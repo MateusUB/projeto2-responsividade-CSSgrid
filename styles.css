@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-body:'Staatliches',cursive;
+    --fs-body: 2rem;
+    --fc-body: hsla(0, 0%, 100%, 1);
+    --ff-p:'Palanquin',sans-serif;
+    --fc-p: hsla(274, 84%, 12%, 1);
+    --fs-header: 4rem;
+    --fc-header: hsla(0, 0%, 100%, 1);
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    background-color: #FFFFFF; 
+    max-width: 38.4rem;
+    margin: 0 auto;
+    
+}
+
+.container {
+    max-width: 40rem;
+    background-color: hsla(233, 100%, 97%, 1);
+}
+
+header {
+   background-color: hsla(218, 17%, 62%, 1); 
+   margin: 0 auto;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+}
+
+header img {
+    padding: 4rem 0rem;
+}
+
+.banner {
+    background-color: hsla(275, 18%, 79%, 1);
+    margin-bottom: 4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: var(--fs-header);
+    color: var(--fc-header);
+    letter-spacing: 0.08em;
+    line-height: 3.4rem;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 6rem;
+}
+
+main p {
+    
+    max-width: 30rem;
+    text-align: center;
+    font-family: var(--ff-p);
+    font-size: 1.41rem;
+    color: var(--fc-p);
+    line-height: 1.5rem;
+    padding-top: 1.8rem;
+    padding-bottom: 6rem;
+   
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.card  {
+    position: relative;
+}
+
+.card img {
+    animation: downtop 700ms ease 150ms;
+}
+
+.card h2 {
+    max-width: 12rem;
+    max-height: 4rem;
+    font-size: var(--fs-body);
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+
+    position: absolute;
+    top: 1.1rem;
+    right: 1.6rem;
+
+    background-color: hsla(312, 91%, 96%, 1);
+    border-radius: 2rem;
+    width: fit-content;
+
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    animation: topdown 700ms ease 150ms;
+}
+
+
+
+footer h3{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    text-align: center;
+}
+
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: hsla(232, 17%, 35%, 1);
+}
+
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@media (max-width:1099px){
+    header p, #card1A, #card4A,footer{
+        display: none;
+    }
+}
+@media (min-width:1100px) {
+
+    main p, .card h2 {
+        display: none;
+    }
+
+    header {
+        width: 49.7rem;
+        height: 100vh;
+    }
+
+    header p {
+        max-width: 31.5rem;
+        font-family: 'Roboto';
+        font-size: 2.4rem;
+        line-height: 2rem;
+        padding-top: 3.2rem;
+        color: #FFFFFF;
+    }
+
+    body {
+        margin: 0;
+        background-color: #FFFFFF;
+        max-width: 1480px;
+        max-height: 720px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        max-height: 720px;
+        background-color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        gap: 9rem;
+    }
+    
+    .card img{
+        max-width: 280px;
+    }
+    .card-wrapper {
+        padding-top: 4rem;
+        margin-left: 0rem;
+        display: grid;
+        grid-template-areas: 'A B C'
+                             'D B E'
+                             'D F E';  
+    }
+
+    .card-wrapper div:nth-child(1) {
+        grid-area: A;
+    }
+
+    .card-wrapper div:nth-child(2) {
+        grid-area: B;
+    }
+
+    .card-wrapper div:nth-child(3) {
+        grid-area: C;
+    }
+
+    .card-wrapper div:nth-child(4) {
+        grid-area: D;
+    }
+
+    .card-wrapper div:nth-child(5) {
+        grid-area: F;
+    }
+
+    .card-wrapper div:nth-child(6) {
+        grid-area: E;
+    }
+
+}
